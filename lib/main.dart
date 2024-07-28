@@ -22,12 +22,6 @@ class _AppState extends State<App> {
         ThemeMode.dark => false
       };
 
-  void toggleThemeMode() {
-    setState(() {
-      themeMode = isLightMode ? ThemeMode.dark : ThemeMode.light;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,9 +31,24 @@ class _AppState extends State<App> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: isMaterial3,
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: isMaterial3,
+        brightness: Brightness.dark,
       ),
       home: Home(
         isMaterial3: isMaterial3,
+        toggleThemeMode: () {
+          setState(() {
+            themeMode = isLightMode ? ThemeMode.dark : ThemeMode.light;
+          });
+        },
+        changeMaterialVersion: () {
+          setState(() {
+            isMaterial3 = !isMaterial3;
+          });
+        },
       ),
     );
   }

@@ -4,46 +4,21 @@ class NavigationTransitionWidget extends StatefulWidget {
   const NavigationTransitionWidget({
     super.key,
     required this.scaffoldKey,
-    required this.animationController,
-    required this.railAnimation,
-    required this.navigationRail,
-    required this.navigationBar,
     required this.appBar,
     required this.body,
+    required this.navigationBar,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
-  final AnimationController animationController;
-  final CurvedAnimation railAnimation;
-  final Widget navigationRail;
-  final Widget navigationBar;
   final PreferredSizeWidget appBar;
   final Widget body;
+  final Widget navigationBar;
 
   @override
   State<NavigationTransitionWidget> createState() => _NavigationTransitionWidgetState();
 }
 
 class _NavigationTransitionWidgetState extends State<NavigationTransitionWidget> {
-  late final AnimationController controller;
-  late final CurvedAnimation railAnimation;
-  late final ReverseAnimation barAnimation;
-  bool controllerInitialized = false;
-  bool showDivider = false;
-
-  @override
-  void initState() {
-    super.initState();
-
-    controller = widget.animationController;
-    railAnimation = widget.railAnimation;
-    barAnimation = ReverseAnimation(
-      CurvedAnimation(
-        parent: controller,
-        curve: const Interval(0.0, 0.5),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +26,7 @@ class _NavigationTransitionWidgetState extends State<NavigationTransitionWidget>
       key: widget.scaffoldKey,
       appBar: widget.appBar,
       body: widget.body,
-      bottomNavigationBar: ,
+      bottomNavigationBar: widget.navigationBar,
     );
   }
 }
