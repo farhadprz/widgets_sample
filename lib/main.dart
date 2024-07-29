@@ -18,6 +18,7 @@ class _AppState extends State<App> {
   ThemeMode themeMode = ThemeMode.system;
   ColorSeed colorSelected = ColorSeed.baseColor;
   ColorImageProvider imageSelected = ColorImageProvider.leaves;
+  ColorScheme imageColorScheme = const ColorScheme.light();
   ColorSelectionMethod colorSelectionMethod = ColorSelectionMethod.colorSeed;
 
   bool get isLightMode => switch (themeMode) {
@@ -33,11 +34,14 @@ class _AppState extends State<App> {
       title: 'Widgets Sample',
       themeMode: themeMode,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorSchemeSeed: colorSelectionMethod == ColorSelectionMethod.colorSeed ? colorSelected.color : null,
+        colorScheme: colorSelectionMethod == ColorSelectionMethod.image ? imageColorScheme : null,
         useMaterial3: isMaterial3,
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
+        colorSchemeSeed:
+            colorSelectionMethod == ColorSelectionMethod.colorSeed ? colorSelected.color : imageColorScheme.primary,
         useMaterial3: isMaterial3,
         brightness: Brightness.dark,
       ),
@@ -63,9 +67,12 @@ class _AppState extends State<App> {
           });
         },
         handleImageSelect: (value) {
-          setState(() {
-            colorSelectionMethod = ColorSelectionMethod.image;
-            imageSelected = ColorImageProvider.values[value];
+          ColorScheme.fromImageProvider(provider: NetworkImage(ColorImageProvider.values[value].url)).then((newScheme) {
+            setState(() {
+              colorSelectionMethod = ColorSelectionMethod.image;
+              imageSelected = ColorImageProvider.values[value];
+              imageColorScheme = newScheme;
+            });
           });
         },
       ),
