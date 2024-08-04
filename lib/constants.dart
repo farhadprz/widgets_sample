@@ -1,9 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:widgets_sample/widgets/theme_button_widget.dart';
 
 const int mediumWidthBreakpoint = 1000;
 const int largeWidthBreakpoint = 1500;
+
+const double transitionLength = 500;
 
 enum ColorSelectionMethod {
   colorSeed,
@@ -49,6 +52,7 @@ enum SelectedScreen {
   elevations(3);
 
   const SelectedScreen(this.value);
+
   final int value;
 }
 
@@ -78,3 +82,19 @@ const List<NavigationDestination> bottomNavigationBarItems = [
     selectedIcon: Icon(Icons.opacity),
   ),
 ];
+
+final List<NavigationRailDestination> navRailDestinations = bottomNavigationBarItems
+    .map<NavigationRailDestination>(
+      (destination) => NavigationRailDestination(
+        icon: Tooltip(
+          message: destination.label,
+          child: destination.icon,
+        ),
+        selectedIcon: Tooltip(
+          message: destination.label,
+          child: destination.selectedIcon,
+        ),
+        label: Text(destination.label),
+      ),
+    )
+    .toList();

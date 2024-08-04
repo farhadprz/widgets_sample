@@ -22,10 +22,10 @@ class _AppState extends State<App> {
   ColorSelectionMethod colorSelectionMethod = ColorSelectionMethod.colorSeed;
 
   bool get isLightMode => switch (themeMode) {
-        ThemeMode.system => View.of(context).platformDispatcher.platformBrightness == Brightness.light,
-        ThemeMode.light => true,
-        ThemeMode.dark => false
-      };
+    ThemeMode.system => View.of(context).platformDispatcher.platformBrightness == Brightness.light,
+    ThemeMode.light => true,
+    ThemeMode.dark => false
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +46,7 @@ class _AppState extends State<App> {
         brightness: Brightness.dark,
       ),
       home: Home(
+        isLightMode: isLightMode,
         isMaterial3: isMaterial3,
         colorSelected: colorSelected,
         imageSelected: imageSelected,
