@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:widgets_sample/widgets/theme_button_widget.dart';
 
 const int mediumWidthBreakpoint = 1000;
-const int largeWidthBreakpoint = 1500;
+const int largeWidthBreakpoint = 1250;
 
 const double transitionLength = 500;
 

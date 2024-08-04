@@ -64,7 +64,11 @@ class ExpandedTrailingActionsWidget extends StatelessWidget {
             ],
           ),
           const Divider(),
-          ExpandedColorSeedActionWidget(),
+          ExpandedColorSeedActionWidget(
+            handleColorSelected: handleColorSelect,
+            colorSelected: colorSelected,
+            colorSelectionMethod: colorSelectionMethod,
+          ),
           const Divider(),
           ExpandedImageColorActionWidget(
             handleImageSelect: handleImageSelect,
