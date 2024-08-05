@@ -185,7 +185,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       );
 
   Widget getScreen(SelectedScreen selectedScreen) => switch (selectedScreen) {
-        SelectedScreen.component => const ComponentsScreen(),
+        SelectedScreen.component => ComponentsScreen(
+            railAnimation: railAnimation,
+            scaffoldKey: scaffoldKey,
+            showSecondHalf: showMediumSizeLayout || showLargeSizeLayout,
+          ),
         SelectedScreen.color => const ColorPalettesScreen(),
         SelectedScreen.typography => const TypographyScreen(),
         SelectedScreen.elevations => const ElevationsScreen(),
