@@ -12,8 +12,8 @@ class FloatingActionButtonsWidget extends StatelessWidget {
       tooltipMessage: 'Use FloatingActionButton or FloatingActionButton.extended',
       child: Wrap(
         crossAxisAlignment: WrapCrossAlignment.center,
-        runSpacing: smallSpacing,
-        spacing: smallSpacing,
+        runSpacing: smallSpacing, // Space between the lines
+        spacing: smallSpacing, // Space between the children
         children: [
           FloatingActionButton.small(onPressed: () {}, tooltip: 'Small', child: const Icon(Icons.add)),
           FloatingActionButton.extended(
