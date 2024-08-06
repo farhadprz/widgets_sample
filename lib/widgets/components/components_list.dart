@@ -3,6 +3,7 @@ import 'package:widgets_sample/constants.dart';
 import 'package:widgets_sample/widgets/components/actions/actions_widget.dart';
 import 'package:widgets_sample/widgets/components/actions/build_slivers.dart';
 import 'package:widgets_sample/widgets/components/actions/cache_height.dart';
+import 'package:widgets_sample/widgets/components/communications/communications_widget.dart';
 
 class ComponentsList extends StatelessWidget {
   const ComponentsList({
@@ -18,6 +19,8 @@ class ComponentsList extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> children = [
       const ActionsWidget(),
+      colDivider,
+      const CommunicationsWidget(),
       colDivider,
     ];
     List<double?> heights = List.filled(children.length, null); // A list of a specific length, but you either can't or

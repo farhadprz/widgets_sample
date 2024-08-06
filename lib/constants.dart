@@ -8,7 +8,7 @@ const double largeWidthBreakpoint = 1500;
 const double transitionLength = 500;
 
 const colDivider = SizedBox(height: 10);
-const rowDivider = SizedBox(width: 10);
+const rowDivider = SizedBox(width: 20);
 
 const tinySpacing = 3.0;
 const smallSpacing = 10.0;
@@ -87,6 +87,54 @@ const List<NavigationDestination> bottomNavigationBarItems = [
     label: 'Elevations',
     tooltip: '',
     selectedIcon: Icon(Icons.opacity),
+  ),
+];
+
+const List<Widget> exampleBarDestinations = [
+  NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.explore_outlined),
+    selectedIcon: Icon(Icons.explore),
+    label: 'Explore',
+  ),
+  NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.pets_outlined),
+    selectedIcon: Icon(Icons.pets),
+    label: 'Pets',
+  ),
+  NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.account_box_outlined),
+    selectedIcon: Icon(Icons.account_box),
+    label: 'Account',
+  ),
+];
+
+List<Widget> barWithBadgeDestinations = [
+  NavigationDestination(
+    icon: Badge.count(count: 1000, child: const Icon(Icons.mail_outline)),
+    label: 'Mail',
+    tooltip: '',
+    selectedIcon: Badge.count(count: 1000, child: const Icon(Icons.mail)),
+  ),
+  const NavigationDestination(
+    icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
+    label: 'Chat',
+    tooltip: '',
+    selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
+  ),
+  const NavigationDestination(
+    icon: Badge(child: Icon(Icons.group_outlined)),
+    label: 'Rooms',
+    tooltip: '',
+    selectedIcon: Badge(child: Icon(Icons.group_rounded)),
+  ),
+  NavigationDestination(
+    icon: Badge.count(count: 3, child: const Icon(Icons.videocam_outlined)),
+    label: 'Meet',
+    tooltip: '',
+    selectedIcon: Badge.count(count: 3, child: const Icon(Icons.videocam)),
   ),
 ];
 
