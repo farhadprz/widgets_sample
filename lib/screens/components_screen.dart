@@ -20,8 +20,8 @@ class ComponentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplitTransition(
       animation: railAnimation,
-      componentList: ComponentsList(scaffoldKey: scaffoldKey, showSecondList: showSecondHalf),
-      secondPartComponentList: const SecondHalfComponentsList(),
+      componentList: ComponentsList(scaffoldKey: scaffoldKey, showSecondHalf: showSecondHalf),
+      secondPartComponentList: SecondHalfComponentsList(scaffoldKey: scaffoldKey),
     );
   }
 }
