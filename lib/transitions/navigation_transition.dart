@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_sample/transitions/bar_transition.dart';
 import 'package:widgets_sample/transitions/rail_transition.dart';
+import 'package:widgets_sample/widgets/components/navigations/drawer/navigation_drawer_section_widget.dart';
 
 class NavigationTransition extends StatefulWidget {
   const NavigationTransition({
@@ -68,7 +69,7 @@ class _NavigationTransitionState extends State<NavigationTransition> {
         backgroundColor: colorScheme.surface,
         child: widget.navigationBar,
       ),
-      endDrawer: const SizedBox(),
+      endDrawer: const NavigationDrawerSectionWidget(),
     );
   }
 }

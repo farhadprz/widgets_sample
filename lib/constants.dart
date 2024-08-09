@@ -161,6 +161,7 @@ enum IconLabel {
   heart('Heart', Icons.favorite);
 
   const IconLabel(this.label, this.icon);
+
   final String label;
   final IconData icon;
 }
@@ -173,6 +174,55 @@ enum ColorLabel {
   grey('Grey', Colors.grey);
 
   const ColorLabel(this.label, this.color);
+
+  final String label;
+  final Color color;
+}
+
+class ExampleDestination {
+  const ExampleDestination(
+    this.label,
+    this.icon,
+    this.selectedIcon,
+  );
+
+  final String label;
+  final Widget icon;
+  final Widget selectedIcon;
+}
+
+const List<ExampleDestination> destinations = [
+  ExampleDestination('Inbox', Icon(Icons.inbox_outlined), Icon(Icons.inbox)),
+  ExampleDestination('Outbox', Icon(Icons.send_outlined), Icon(Icons.send)),
+  ExampleDestination('Favorites', Icon(Icons.favorite_outline), Icon(Icons.favorite)),
+  ExampleDestination('Trash', Icon(Icons.delete_outline), Icon(Icons.delete)),
+];
+
+const List<ExampleDestination> labelDestination = [
+  ExampleDestination('Family', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination('School', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+  ExampleDestination('Work', Icon(Icons.bookmark_border), Icon(Icons.bookmark)),
+];
+
+enum ColorItem {
+  red('red', Colors.red),
+  orange('orange', Colors.orange),
+  yellow('yellow', Colors.yellow),
+  green('green', Colors.green),
+  blue('blue', Colors.blue),
+  indigo('indigo', Colors.indigo),
+  violet('violet', Color(0xFF8F00FF)),
+  purple('purple', Colors.purple),
+  pink('pink', Colors.pink),
+  silver('silver', Color(0xFF808080)),
+  gold('gold', Color(0xFFFFD700)),
+  beige('beige', Color(0xFFF5F5DC)),
+  brown('brown', Colors.brown),
+  grey('grey', Colors.grey),
+  black('black', Colors.black),
+  white('white', Colors.white);
+
+  const ColorItem(this.label, this.color);
   final String label;
   final Color color;
 }

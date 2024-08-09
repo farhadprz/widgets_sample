@@ -181,7 +181,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   colorSelectionMethod: widget.colorSelectionMethod,
                 ),
               ]
-            : null,
+            : [Container()],// Not show Hamburger icon, null: Hamburger icon will be shown
       );
 
   Widget getScreen(SelectedScreen selectedScreen) => switch (selectedScreen) {
