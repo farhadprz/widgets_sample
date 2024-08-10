@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'widgets/elevations/elevation_info.dart';
+
 const double mediumWidthBreakpoint = 1000;
 const double largeWidthBreakpoint = 1500;
 
@@ -226,3 +228,17 @@ enum ColorItem {
   final String label;
   final Color color;
 }
+
+// If screen content width is greater or equal to this value, the light and dark
+// color schemes will be displayed in a column. Otherwise, they will
+// be displayed in a row.
+const double narrowScreenWidthThreshold = 400;
+
+const List<ElevationInfo> elevations = [
+  ElevationInfo(0, 0.0, 0),
+  ElevationInfo(1, 1.0, 5),
+  ElevationInfo(2, 3.0, 8),
+  ElevationInfo(3, 6.0, 11),
+  ElevationInfo(4, 8.0, 12),
+  ElevationInfo(5, 12.0, 14),
+];

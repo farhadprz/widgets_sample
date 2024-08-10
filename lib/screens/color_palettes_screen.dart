@@ -6,11 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:widgets_sample/constants.dart';
 import 'package:widgets_sample/widgets/color_palletes/color_scheme_widget.dart';
 
-// If screen content width is greater or equal to this value, the light and dark
-// color schemes will be displayed in a column. Otherwise, they will
-// be displayed in a row.
-const double narrowScreenWidthThreshold = 400;
-
 class ColorPalettesScreen extends StatelessWidget {
   const ColorPalettesScreen({super.key});
 
